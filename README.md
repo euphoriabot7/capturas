@@ -23,6 +23,24 @@ nombre. Sin nubes, sin cuentas y sin ventanas de configuración.
 | **macOS 12+** | ✅ Captura y recorte (pide permiso de Grabación de pantalla) |
 | **Linux** | ✅ X11 · Wayland con `grim` o `gnome-screenshot` |
 
+## Descargar
+
+En **[Releases](https://github.com/euphoriabot7/capturas/releases/latest)** están
+los ejecutables de Windows, macOS y Linux que compila el CI:
+
+| Archivo | Sistema |
+|---|---|
+| `Capturas.exe` | Windows 10/11 (sin instalar Python) |
+| `Capturas-macos` | macOS 12+ |
+| `Capturas-linux` | Linux x86_64 |
+
+Si macOS se niega a abrirlo por no estar firmado:
+
+```bash
+xattr -dr com.apple.quarantine Capturas-macos
+chmod +x Capturas-macos
+```
+
 ---
 
 ## 1. Probar desde el código fuente

@@ -78,6 +78,14 @@ jobs:
           --add-data "icon.ico:." --add-data "icon.png:."
           capturas.py
 
+      - name: Nombre del binario (macOS)
+        if: runner.os == 'macOS'
+        run: mv dist/Capturas dist/Capturas-macos
+
+      - name: Nombre del binario (Linux)
+        if: runner.os == 'Linux'
+        run: mv dist/Capturas dist/Capturas-linux
+
       - uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.artifact }}
