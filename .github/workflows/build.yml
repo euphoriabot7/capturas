@@ -80,7 +80,9 @@ jobs:
 
       - name: Nombre del binario (macOS)
         if: runner.os == 'macOS'
-        run: mv dist/Capturas dist/Capturas-macos
+        run: |
+          rm -rf dist/Capturas.app
+          mv dist/Capturas dist/Capturas-macos
 
       - name: Nombre del binario (Linux)
         if: runner.os == 'Linux'
@@ -103,5 +105,5 @@ jobs:
 
       - uses: softprops/action-gh-release@v2
         with:
-          files: dist/**/*
+          files: dist/*/*
           generate_release_notes: true
